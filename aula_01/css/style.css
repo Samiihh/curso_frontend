@@ -1,0 +1,164 @@
+/* Aula 01 - CSS Para pagina de boas vindas 
+Metodoligia: MOBILE-FIRST
+
+-  Estilos base são otimizados para CELULARES (Viewport pequeno)
+- Telas maiores recebem ajustes via Media Queries
+- Garante boas espreriências em qualquer dispositivo
+
+Estrutura do CSS: 
+Estilos Globais (body, fontes)
+Estilos do Header (cabeçalho)
+Estilo da Main (conteudo principal)
+Estilos dos elementos (img, p, a)
+Media queries para desktop (ao final)
+*/
+
+/* Estilos Globais (Base Mobile) */
+
+/* Reset básico de estilos e ajuste do box model para toda a página */
+* {
+    margin: 0;
+    /* remove espaçamentos padrão dos navegadores */
+    padding: 0;
+    /* remove preenchimentos padrão dos navegadores */
+    box-sizing: border-box;
+    /* faz largura/altura incluir bordas e padding */
+}
+
+body {
+
+    /* O body recebe estilos globais que afetam toda a página. */
+    /* Isso melhora a consistência visual e deixa o layout mais simples no mobile. */
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*Define a familia de fontes padrão para toda a pagina*/
+
+    background-color: #f4f4f4;
+    /*Define a cor de fundo da pagina*/
+
+    color: #333;
+    /*Cor padrão dos nossos textos*/
+
+    margin: 0;
+    /*espaçamento externo do elemento*/
+    padding: 0;
+    /*Espaçamento interno do Elemento*/
+
+    text-align: center;
+    /*Alinha todo o texto ao centro*/
+}
+
+header {
+    background-color: #2c3e50;
+    /* Cor de Fundo*/
+    color: #fff;
+    padding: 30px 15px;
+}
+
+/* O header é a seção de topo da página. */
+/* A cor de fundo escura destaca o título e cria contraste com o restante da página. */
+
+h1 {
+    font-size: 1.8rem;
+    /*Tamanho de fonte (1.8rem = 28.8px)*/
+    font-weight: 700;
+    /* Peso da Fonte ( mais grosso = mais destaques*/
+}
+
+/* O h1 é o título mais importante da página. */
+/* Ele deve ser usado apenas uma vez para manter a hierarquia semântica. */
+
+
+/* Estilo da Main - (Conteúdo principal) */
+main {
+    padding: 30px 15px;
+    /*Espaçamento interno do elemento*/
+}
+
+/* Estilos dos Elementos */
+
+/* Estilo de img */
+img {
+    width: 100%;
+    /*para imagem ocupar 100% do espaço de largura*/
+    max-width: 300px;
+    /*O tamanho maximo da nossa imagem*/
+    border-radius: 10px;
+    /*Bordas arredondadas*/
+    border: 1px solid black;
+    /*para colocar borda*/
+    margin-bottom: 20px;
+    /* Espaçamento externo embaixo da imagem*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /*Sombra sutil de produndidade*/
+}
+
+/*Estilo dos parágrafos*/
+
+p {
+    font-size: 1rem;
+    /*Tamanho de de fonte*/
+    margin-bottom: 30px;
+    /*Espaçamento abaixo do parágrafo*/
+    line-height: 1.5;
+    /*Espaçamento entre linhas para ocupar toda a largura*/
+}
+
+/*Estilo do Botão*/
+.button {
+    display: block;
+    /*Display block faz o link ocupar toda a largura disponivel*/
+    background-color: #e67e22;
+    /*Cor de fundo*/
+    color: #fff;
+    /*Cor do Texto*/
+
+    padding: 15px;
+    /*Espaçamento interno*/
+    text-decoration: none;
+    /*Para tirar a decoração dos links*/
+    border-radius: 5px;
+    /*Bordas arredondadas*/
+    font-weight: bold;
+    /*Peso da Fonte*/
+    transition: background-color 0.3s ease;
+    /*transição suave da cor de fudo*/
+
+}
+
+footer {
+    background-color: #2c3e50;
+    /*Cor de Fundo*/
+    color: #bdc3c7;
+    /*Cor do texto*/
+    padding: 15px 0;
+    /*Espaçamento interno*/
+    width: 100%;
+    /*Largura de 100%*/
+}
+
+/*Media Query: Telas maiores (Desktop)*/
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+        /*Tamanho da font maior*/
+
+    }
+
+    p {
+        font-size: 1.2rem;
+        max-width: 600px; /*Maximo de largura*/        
+        margin: 0 auto 30px; /*ajustanddo o espaçamento externo*/        
+    }
+
+    .button {
+        display: inline-block; /*Botão volta a ser pequeno para desktop*/
+        padding: 15px 40px; /*Espaçamento interno*/
+    }
+
+    footer{
+        position: fixed; /*Posicionamento do elemento fixado*/
+        bottom: 0; /*espaçamento embaixo do elemento*/
+    }
+}
