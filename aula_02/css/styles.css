@@ -1,0 +1,162 @@
+/* 
+Aula 02 - CSS para Cartão produto
+
+TÓPICOS ABORDADOS:
+
+1. FlexBox (centralizando os elementos)
+2. Box shadows ( sombras para profundidade)
+3. Border-radius (bordas arredondadas)
+4. hover effects (interatividade)
+5. Rsponsive design
+6. Transições CSS ( smooth animations)
+*/
+
+/* 
+    ESTILOS GLOBAIS
+*/
+
+/* Reset do css padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* ajusta a altura/largura  ficam mais previsiveis*/
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /*Fonte padrão para toda a pagina*/
+    background-color: #ecf0f1;
+    /*Cor de fundo*/
+    padding: 20px;
+    /*Espaçamento interno*/
+    display: flex;
+    /*FLEXBOX : display flex permite usar propriedades de centralização*/
+    justify-content: center;
+    /* Centraliza Horizontalmente (esquerda-direita) */
+    align-items: center;
+    /*Centraliza verticalmente*/
+    min-height: 100vh;
+    /*Altura minima 100% viewport (tela inteira)*/
+}
+
+/* CONTAINER (div wrapper) */
+.container {
+    /*
+        O container é o pai do .product-card
+        Herda o flexbox do bory, pode ter suas proprias propriedades
+    */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    
+}
+
+/* CARTÃO DO PRODUTO (Product card) */
+
+.product-card {
+
+    background-color: #ffff;
+    /*Cor de Fundo*/
+    width: 100%;
+    /*Ocupar 100% da largura disponivel*/
+    max-width: 320px;
+    /*Largura maxima no mobile (evita ficar muito grande)*/
+    border-radius: 15px;
+    /*Bordas aredondadas para design moderno*/
+    overflow: hidden;
+    /* Garante que o conteúdo não ultrapasse as bordas do elemento*/
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /*Sombra profunda para criar a sensação de elevação*/
+    /*(horizontal | vertical | blur | spread | cor com transparencia)*/
+    transition: transform 0.3s ease;
+    /*Trasnsição suave para animações ( transform levará 0,3s)*/
+}
+
+/* Imagem do Produto */
+
+.product-card img {
+    width: 100%;
+    /*Largura do cartão*/
+    height: 200px;
+    /*Altura Fixa para imagem*/
+    object-fit: cover;
+    /*Cover garante que a imagem preencha todo o espaço sem distorcer*/
+}
+
+/*CONTÉUDO INTERNO DO CARTÃO*/
+
+.card-content {
+    padding: 20px;
+    /*Espaçamento interno*/
+    text-align: center;
+    /*Alinhamento do texto ao centro*/
+}
+
+h3 {
+    color: #2c3e50;
+    /* Cor do texto */
+    font-size: 1.3rem;
+    /*Tamanho de font para mobile*/
+    margin-bottom: 10px;
+}
+
+p {
+    color: #7f8c8d;
+    /*Cor de texto*/
+    font-size: 0.9rem;
+    line-height: 1.4;
+    /*espaçamento entre as linhas*/
+    margin-bottom: 20px;
+    /*espaçamento inferior*/
+}
+
+.price {
+    display: block;
+    /* Faz o peço ocupar a linha inteira*/
+    font-size: 1.4rem;
+    font-weight: bold;
+    /* peso da font*/
+    color: #27ae60;
+    margin-bottom: 20px;
+}
+
+/*BOTÃO DE COMPRAR*/
+
+.buy-btn {
+    display: block;
+    /*Ocupar todo o espaço da linha*/
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    /*remover o sunlinhado padrão de links*/
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    /*transição suave para efeitos hover*/
+}
+
+
+/*MEDIA QUERY: DESCKTOP*/
+
+@media (min-width: 1024px) {
+
+    /*Efeito de zoom qando passa o mouse sobre o cartão*/
+    .product-card:hover {
+        /* Scale: aumentar o tamanho em 5% */
+        transform: scale(1.05);
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /*Botão muda a cor quando passa o mouse (hover)*/
+    .buy-btn:hover{
+        /* Azul mais escuro no hover*/
+        background-color: #2980b9;
+    }
+}
