@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 05 - layout de Notícias</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Cabeçario da pagina -->
+    <header class="main-header">
+      <!-- Logo do site -->
+      <div class="logo">TecNews</div>
+
+      <!-- Menu de navegação -->
+      <!-- Tag(nav) é semantica e indica aerea de navegação -->
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">Gadgets</a></li>
+          <li><a href="">Software</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Wrapper do layout ( flex: colum no mobilie e Row no desktop) -->
+    <div class="layout-wrapper">
+      <!-- Conteudo Principal -->
+      <!-- Seção semantica para conteudo principal -->
+      <main class="content">
+        <!-- Artigo (article) -->
+        <!-- Tag semantica infica um artigo/post independente -->
+        <article class="post">
+          <h1>O Futuro da Inteligência Artificial em 2026</h1>
+
+          <img src="./img/image.png" alt="IA" />
+
+          <p>
+            A inteligencia artificial atinngiu um novo patamar de integração no
+            cotidiano...
+          </p>
+          <p>
+            Novos modelos multimodais permitem interações naturais e
+            eficientes...
+          </p>
+        </article>
+      </main>
+
+      <!-- BARRA LATERAL (Aside/Sidebar) -->
+      <!-- Seção semnatica para conteudos secundarios (barras laterais) -->
+      <aside class="sidebar">
+        <h3>Mais lidas</h3>
+        <!-- Lista de artigos relacionados  -->
+        <ul class="sidebar-list">
+            <li><a href="#">Lançamento do novo Iphone</a></li>
+            <li><a href="#">Dicas de CSS Grid</a></li>
+            <li><a href="#">O que é Web3?</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 TecNews - Todos os direitos reservados</p>
+    </footer>
+  </body>
+</html>

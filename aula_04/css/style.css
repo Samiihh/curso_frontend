@@ -53,6 +53,7 @@ h2 {
     text-align: center;
     font-size: 1.4rem;
     color: #333;
+    margin-bottom: 30px;
 }
 
 .form-group {
@@ -73,4 +74,39 @@ input, select , textarea {
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 1rem;
+}
+
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #764ba2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+/*Media Query*/
+
+
+@media (min-width: 768px) {
+    body {
+        align-items: center;
+        /* Gradiente no fundo: roxo claro para o roxo escuro */
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100% );
+    }
+
+    .form-wrapper {
+        padding: 40px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2)
+    }
+
+    button:hover {
+        background: #667eea;
+        cursor: pointer;
+    }
 }
