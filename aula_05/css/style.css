@@ -21,6 +21,9 @@ TÓPICOS PRINCIPAIS:
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .main-header {
@@ -51,8 +54,71 @@ nav a {
     font-size: 0.9rem;
 }
 
+.layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 20px;
+    flex: 1;
+}
+
+.content, .sidebar{
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0, 0, 0.5);
+}
+.sidebar ul {
+    list-style-type: square;
+    color: red;
+}
 
 
 .post img {
     width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
+
+
+.main-footer {
+    text-align: center;
+    padding: 30px;
+    background: #1a1a1a;
+    color: #888;
+    font-size: 0.8rem;
+    margin-bottom: auto;
+}
+
+
+@media (min-width: 992px) {
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 100px;
+        text-align: left;
+    }
+
+    .layout-wrapper{
+        flex-direction: row;
+        margin: 40px auto;
+        max-width: 1100px;
+    }
+
+    /*Content ocupa 75% do espaço com (flex:3)*/
+    .content {
+        /* 
+         flex: 3
+         se sidebar é  flex:1, o content será 3x maior
+         porporção: 3:1 = 75%:25%
+        */
+        flex: 3;
+    
+
+    }
+
+    .sidebar{
+        flex: 1;
+    }
+}
+

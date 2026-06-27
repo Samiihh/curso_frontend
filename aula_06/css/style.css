@@ -1,0 +1,52 @@
+/* 
+
+AULA 6  - CSS PARA GALERIA RESPONSIVA
+
+TOPICOS PRINCIPAIS 
+ - Grid responsavel com Flex box
+ - overlay com posição absoluta
+ - object-fit para imagens
+ - animações apenas para desctop
+ - multiplas media queries
+
+*/
+
+/* Estilos Globais  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #121212;
+    color: white;
+    padding: 30px 15px;
+}
+
+/* Titulo da Galeria */
+
+h1{
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+/* Grid da Galeria */
+
+.grid {
+
+    /* 
+        Flexbox : Criar um grid com flex-wrap
+        Este é um padrão para criar grids responsiveis sem CSS Grid    
+    */
+    display: flex;
+    flex-wrap: wrap; /*Quebra linha quando os items não cabem*/
+    gap: 15px;
+    justify-content: center;
+}
+
+
+/* Itens da Galeria */
+
