@@ -31,6 +31,7 @@ body {
 h1{
     text-align: center;
     font-size: 1.8rem;
+    /* margin-bottom: 20px; */
 }
 
 /* Grid da Galeria */
@@ -45,8 +46,111 @@ h1{
     flex-wrap: wrap; /*Quebra linha quando os items não cabem*/
     gap: 15px;
     justify-content: center;
+    margin-top: 20px;
 }
 
 
 /* Itens da Galeria */
 
+.item {
+    /* 
+        position: relative
+        Cria um contexto de posicionamento para o overlay ser posicionado em relação a este elemento e não a viewport
+    */
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden; /* Garante que as imagens/overlays  não vazem para fora das bordas*/
+    border-radius: 10px;
+}
+
+.item img {
+   width: 100%;
+   height: 100%; 
+   /* 
+   object-fit: cover
+   Faz a imagem preencher o espaço sem distorcer,
+   Se necessario, corta a imagem nas laterais
+   */
+   object-fit: cover;
+}
+
+/* Overlay (Camada de texto sobre a imagem) */
+
+.overlay {
+
+    /* 
+        position:absolute
+        Posicionar o overlay SOBRE a imagem( no top da pilha de elementos)
+        A posição é relativa ao .item (que tem position:relative)
+    */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /*Fundo semi-transparente*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* Media Query : Tablet (600px+) */
+
+@media (min-width: 600px) {
+    /* 
+        calc(50% -15px)
+        - 50% de largura do grid
+        - menos 15px (metade do gap de 30px)  para não exceder a largura
+        - resultado: 2 colunas com espaço entre elas 
+    */
+    
+    .item {
+        width: calc(50% - 15px);
+    }
+  
+}
+
+
+@media (min-width: 1024px) {
+    
+    body {
+        padding: 50px;
+    }
+
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .item {
+        width: calc(33% - 15px);
+    }
+
+    .item img {
+        /* Define a transição 0.5s para a proriedade transform */
+        transition: transform 0.5s ease;
+    }
+
+    /* Efeito Hover na imagem : zoom 10% */
+    .item:hover img {
+        /* scale(1.1) = aumentar 10% */
+        transform: scale(1.1);
+    }
+
+    /*overlay começa invisivel (opacity: 0)*/
+    .overlay{
+        opacity: 0;
+        
+        transition:  opacity 0.3s ease; /*transição suave*/
+        background: rgba(0, 0, 0, 0.7); /* fundo mais escuro no overlay (70% de opacidade)*/
+    }
+
+    /* overlay aparece ao passar o mouse no item */
+    .item:hover .overlay {
+        /* opacity: 1 = completamente visivel */
+        opacity: 1;
+    }
+}
